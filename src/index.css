@@ -1,0 +1,25 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ivory: #FDF8F2;
+  --blush: #F2C4CE;
+  --blush-deep: #D4849A;
+  --blush-light: #FAE8ED;
+  --gold: #C9A96E;
+  --gold-light: #E8D5B0;
+  --burgundy: #7D2A3C;
+  --cream: #FDF5EE;
+  --text-dark: #3A2A2E;
+  --text-mid: #7A5C64;
+  --text-light: #B89AA0;
+  --white: #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--text-dark);
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+}
+::selection { background: var(--blush); color: var(--text-dark); }

@@ -1,0 +1,12 @@
+.nav {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(253,248,242,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(242,196,206,0.4);
+  padding: 14px 20px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 28px; flex-wrap: wrap;
+}
+.link { font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#7A5C64; text-decoration:none; transition:color 0.2s; }
+.link:hover { color:#D4849A; }
+.brand { font-family:'Great Vibes',cursive; font-size:24px; color:#D4849A; }

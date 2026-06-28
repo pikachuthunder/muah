@@ -1,0 +1,13 @@
+.banner {
+  background: linear-gradient(135deg, #B86878 0%, #A05868 50%, #B86878 100%);
+  color: white; text-align: center; padding: 44px 20px;
+  position: relative; z-index: 1; overflow: hidden;
+}
+.banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
+}
+.dateBig { font-family:'Playfair Display',serif; font-size:clamp(36px,8vw,72px); font-weight:400; letter-spacing:0.06em; line-height:1; position:relative; }
+.dateSub { font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:0.42em; text-transform:uppercase; opacity:0.85; margin-top:8px; position:relative; }
+.venue { font-family:'Great Vibes',cursive; font-size:clamp(22px,4.5vw,36px); margin-top:14px; opacity:0.93; position:relative; }
+.venueSub { font-size:11px; letter-spacing:0.32em; text-transform:uppercase; opacity:0.7; margin-top:4px; position:relative; }

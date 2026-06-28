@@ -1,0 +1,26 @@
+.footer {
+  background: #3A2A2E;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  position: relative; z-index: 1; overflow: hidden;
+  padding: 60px 20px 44px;
+}
+.cornerL {
+  position: absolute; top: -20px; left: -20px;
+  width: clamp(120px, 22vw, 180px); height: auto;
+  object-fit: contain; pointer-events: none;
+  opacity: 0.35;
+  filter: brightness(1.4) saturate(0.6);
+}
+.cornerR {
+  position: absolute; top: -20px; right: -20px;
+  width: clamp(120px, 22vw, 180px); height: auto;
+  object-fit: contain; pointer-events: none;
+  opacity: 0.35;
+  transform: scaleX(-1);
+  filter: brightness(1.4) saturate(0.6);
+}
+.inner { position: relative; z-index: 2; }
+.script { font-family:'Great Vibes',cursive; font-size:28px; color:#F2C4CE; margin-bottom:10px; }
+.sub { font-size:13px; letter-spacing:0.16em; color:rgba(255,255,255,0.6); }
+.made { margin-top:10px; font-size:12px; color:rgba(255,255,255,0.28); }

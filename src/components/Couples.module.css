@@ -1,0 +1,169 @@
+.section {
+  padding: 80px 0 70px;
+  background: linear-gradient(180deg, #FDF5F0 0%, #FBF8F4 100%);
+  text-align: center; position: relative; overflow: hidden; z-index: 1;
+}
+
+/* ── SIDE SPRAYS ── */
+.sideLeft {
+  position: absolute; top: 0; left: -55px;
+  height: 100%; width: auto; max-width: 220px;
+  object-fit: contain; object-position: left top;
+  pointer-events: none; z-index: 2; opacity: 0.88;
+  filter: drop-shadow(3px 0 12px rgba(180,120,100,0.1));
+  animation: swL 7s ease-in-out infinite alternate;
+}
+.sideRight {
+  position: absolute; top: 0; right: -55px;
+  height: 100%; width: auto; max-width: 220px;
+  object-fit: contain; object-position: right top;
+  pointer-events: none; z-index: 2; opacity: 0.88;
+  transform: scaleX(-1);
+  filter: drop-shadow(-3px 0 12px rgba(180,120,100,0.1));
+  animation: swR 7s ease-in-out infinite alternate;
+}
+@keyframes swL { 0%{transform:rotate(0deg) translateY(0)} 100%{transform:rotate(1.2deg) translateY(-8px)} }
+@keyframes swR { 0%{transform:scaleX(-1) rotate(0deg) translateY(0)} 100%{transform:scaleX(-1) rotate(1.2deg) translateY(-8px)} }
+
+.inner {
+  position: relative; z-index: 3;
+  padding: 0 clamp(90px, 18vw, 180px);
+}
+
+.eyebrow {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 15px; color: #B89AA0; letter-spacing: 0.16em; margin-bottom: 10px;
+}
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 5vw, 42px); color: #3A2A2E;
+  font-weight: 400; margin-bottom: 40px;
+}
+
+/* ── CARD ── */
+.card {
+  max-width: 640px; margin: 0 auto;
+  background: rgba(255,255,255,0.95);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(160,100,80,0.12), 0 4px 20px rgba(180,100,120,0.08);
+  border: 1px solid rgba(230,200,190,0.5);
+  padding: 56px 40px 44px;
+  position: relative; overflow: hidden;
+}
+
+/* ── CORNER FLORALS ── */
+/* Top-left corner */
+.cornerTL {
+  position: absolute; top: -24px; left: -24px;
+  width: clamp(120px, 22vw, 200px); height: auto;
+  object-fit: contain; pointer-events: none;
+  opacity: 0.85;
+  transform: rotate(0deg);
+  filter: drop-shadow(2px 4px 10px rgba(180,120,100,0.15));
+  z-index: 1;
+}
+/* Bottom-right — flipped both axes */
+.cornerBR {
+  position: absolute; bottom: -24px; right: -24px;
+  width: clamp(120px, 22vw, 200px); height: auto;
+  object-fit: contain; pointer-events: none;
+  opacity: 0.85;
+  transform: rotate(180deg);
+  filter: drop-shadow(-2px -4px 10px rgba(180,120,100,0.15));
+  z-index: 1;
+}
+
+/* ── COUPLE BLOCK ── */
+.coupleBlock {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 20px; position: relative; z-index: 2;
+}
+.ceremonyTag {
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: #C07880; background: rgba(240,210,210,0.3);
+  border-radius: 50px; padding: 7px 20px;
+  border: 1px solid rgba(200,160,160,0.3);
+}
+
+/* ── PHOTO PAIR ── */
+.photoPair { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center; }
+.photoCol  { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.underName { font-family: 'Great Vibes', cursive; font-size: 20px; color: #C07880; }
+.heartCol  { display: flex; align-items: center; margin-top: -20px; }
+.heart { font-size: 30px; color: #C07880; animation: beat 2.2s ease-in-out infinite; }
+@keyframes beat { 0%,100%{transform:scale(1)} 50%{transform:scale(1.22)} }
+
+.photoFrame {
+  width: 148px; height: 188px;
+  border-radius: 74px 74px 14px 14px;
+  border: 1.5px dashed rgba(200,160,160,0.6);
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  cursor: pointer;
+  background: linear-gradient(145deg, rgba(253,245,240,0.8), rgba(250,235,230,0.5));
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s;
+}
+.photoFrame:hover { border-color: #C07880; }
+.photoImg { width: 100%; height: 100%; object-fit: cover; }
+.photoPlaceholder { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.photoLabel { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #B89AA0; text-align: center; padding: 0 8px; }
+
+/* ── NAMES ── */
+.nameRow { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.name { font-family: 'Playfair Display', serif; font-size: clamp(16px, 3vw, 24px); font-weight: 400; letter-spacing: 0.1em; color: #3A2A2E; }
+.amp  { font-family: 'Great Vibes', cursive; font-size: clamp(28px, 5vw, 38px); color: #C07880; line-height: 1; }
+
+/* ── CHIPS ── */
+.chips { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.chip {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(253,248,245,0.9); border-radius: 50px; padding: 9px 18px;
+  font-size: 12.5px; letter-spacing: 0.05em; color: #7A5C64;
+  border: 1px solid rgba(220,190,180,0.4);
+}
+
+/* ── TIME ── */
+.timeWrap { text-align: center; }
+.timeLabel { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: #B89AA0; margin-bottom: 2px; }
+.timeScript { font-family: 'Great Vibes', cursive; font-size: 36px; color: #C07880; }
+
+/* ── MID DIVIDER WITH BOW ── */
+.midDiv {
+  display: flex; align-items: center; gap: 16px;
+  margin: 36px 0; width: 100%; position: relative; z-index: 2;
+}
+.midLine {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200,160,160,0.5), transparent);
+  display: block;
+}
+/* Bow image as divider accent */
+.midBow {
+  width: clamp(100px, 28vw, 180px); height: auto;
+  object-fit: contain; flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(180,140,100,0.2));
+}
+
+@media (max-width: 480px) {
+  .inner { padding: 0 60px; }
+  .card  { padding: 44px 20px 36px; }
+  .photoFrame { width: 118px; height: 152px; border-radius: 59px 59px 10px 10px; }
+  .name  { font-size: 15px; }
+  .cornerTL, .cornerBR { width: 100px; }
+}
+
+/* ── COUPLE PORTRAIT ── */
+.couplePortrait {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(160,100,80,0.15);
+}
+.portraitImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

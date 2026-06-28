@@ -1,0 +1,152 @@
+/* ── STAGE ── */
+.stage {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; cursor: pointer;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+  overflow: hidden;
+}
+.stageHide { opacity: 0; visibility: hidden; pointer-events: none; }
+
+/* ── GARDEN BACKGROUND — fills entire screen ── */
+.gardenBg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Soft overlay so envelope reads clearly */
+.overlay {
+  position: absolute; inset: 0;
+  background: rgba(253, 245, 240, 0.25);
+  z-index: 1;
+}
+
+/* ── ENVELOPE CARD ── */
+.envCard {
+  position: relative; z-index: 3;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+/* ── BOW IMAGE — sits above envelope, untangles on tap ── */
+.bow {
+  width: clamp(220px, 55vw, 360px);
+  height: auto;
+  object-fit: contain;
+  margin-bottom: -28px;
+  position: relative; z-index: 10;
+  filter: drop-shadow(0 4px 12px rgba(180,140,100,0.25));
+  transition: transform 0.9s cubic-bezier(0.4,0,0.2,1), opacity 0.6s ease 0.2s;
+  transform-origin: center center;
+}
+.bow.bowOpen {
+  transform: scale(0.1) rotate(200deg);
+  opacity: 0;
+}
+
+/* ── ENVELOPE BODY ── */
+.envBody {
+  position: relative; width: 300px; height: 200px;
+  background: linear-gradient(145deg, #FFFBF8, #FDF5F0);
+  border-radius: 6px;
+  box-shadow:
+    0 30px 80px rgba(120,80,60,0.2),
+    0 8px 24px rgba(180,100,80,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  border: 1px solid rgba(230,200,190,0.6);
+  overflow: visible;
+}
+.envBottom {
+  position: absolute; bottom: 0; left: 0; width: 0; height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 105px solid #F5D8CC;
+  border-radius: 0 0 6px 6px;
+}
+.envLeft {
+  position: absolute; top: 0; left: 0; width: 0; height: 0;
+  border-left: 150px solid #EEC8B8;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+}
+.envRight {
+  position: absolute; top: 0; right: 0; width: 0; height: 0;
+  border-right: 150px solid #EEC8B8;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+}
+.envFlap {
+  position: absolute; top: 0; left: 0; width: 0; height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 118px solid #F5D0C0;
+  transform-origin: top center;
+  transition: transform 1s cubic-bezier(0.4,0,0.2,1); z-index: 10;
+}
+.envFlap.flapOpen { transform: rotateX(180deg); }
+
+.envSeal {
+  position: absolute; top: 65px; left: 50%;
+  transform: translateX(-50%);
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #D4849A, #C9A96E);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 18px;
+  box-shadow: 0 4px 14px rgba(180,100,120,0.4); z-index: 11;
+  transition: opacity 0.3s ease;
+}
+.envSeal.sealHide { opacity: 0; }
+
+/* ── LETTER ── */
+.letter {
+  position: absolute; top: 16px; left: 50%;
+  transform: translateX(-50%);
+  width: 272px;
+  background: linear-gradient(to bottom, #FFFCFA, #FDF8F5);
+  border-radius: 4px; padding: 16px 20px; text-align: center;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  border: 1px solid rgba(230,200,190,0.5);
+  opacity: 0; z-index: 5; pointer-events: none;
+  transition: opacity 0.8s ease 0.5s, top 1.2s cubic-bezier(0.4,0,0.2,1) 0.2s;
+}
+.letter.letterOpen { top: -128px; opacity: 1; }
+
+.letterScript {
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px; color: #C07880; margin-bottom: 6px;
+}
+.letterDivider { color: #C9A96E; font-size: 12px; margin-bottom: 8px; letter-spacing: 4px; }
+.letterText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11.5px; color: #7A5C64; line-height: 1.9; letter-spacing: 0.03em;
+}
+.letterDate {
+  margin-top: 10px; font-family: 'Playfair Display', serif;
+  font-size: 13px; letter-spacing: 0.2em; color: #C07880;
+}
+
+/* ── TAP HINT ── */
+.tapHint {
+  margin-top: 32px; position: relative; z-index: 4;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-family: 'Cormorant Garamond', serif; font-size: 13px;
+  letter-spacing: 0.22em; color: #5A3A3E; text-transform: uppercase;
+  animation: pulse 2s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.8);
+}
+.tapHint span:first-child { font-size: 24px; }
+.tapHide { opacity: 0; pointer-events: none; }
+
+@keyframes pulse { 0%,100%{opacity:0.5} 50%{opacity:1} }
+
+@media (max-width: 400px) {
+  .envBody { width: 268px; }
+  .envBottom,.envFlap { border-left-width:134px; border-right-width:134px; }
+  .envLeft  { border-left-width:134px; }
+  .envRight { border-right-width:134px; }
+  .letter   { width: 244px; }
+}
