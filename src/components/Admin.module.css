@@ -1,0 +1,166 @@
+/* ── LOGIN ── */
+.loginWrap {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FDF5F0, #FAE8ED);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.loginFloral {
+  position: absolute; bottom: -30px; right: -30px;
+  width: 260px; opacity: 0.4;
+  mix-blend-mode: multiply;
+}
+.loginCard {
+  background: white; border-radius: 24px;
+  padding: 48px 40px; text-align: center;
+  box-shadow: 0 20px 60px rgba(160,100,80,0.14);
+  border: 1px solid rgba(230,200,190,0.45);
+  width: min(400px, 90vw);
+}
+.loginTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px; letter-spacing: 0.3em;
+  text-transform: uppercase; color: #B89AA0; margin-bottom: 8px;
+}
+.loginScript {
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px; color: #C07880; margin-bottom: 32px;
+}
+.loginInput {
+  width: 100%; padding: 14px 18px;
+  border: 1.5px solid rgba(200,170,160,0.5); border-radius: 12px;
+  font-family: 'Cormorant Garamond', serif; font-size: 15px;
+  color: #3A2A2E; background: #FDF8F5; outline: none;
+  margin-bottom: 16px; transition: border-color 0.2s;
+}
+.loginInput:focus { border-color: #C07880; }
+.loginBtn {
+  width: 100%; padding: 14px;
+  background: linear-gradient(135deg, #C07880, #A86070);
+  color: white; border: none; border-radius: 50px;
+  font-family: 'Playfair Display', serif; font-size: 16px;
+  cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+}
+.loginBtn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(180,100,120,0.3); }
+
+/* ── DASHBOARD ── */
+.wrap {
+  min-height: 100vh;
+  background: #FDF8F5;
+  padding: 0 0 60px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.header {
+  background: linear-gradient(135deg, #C07880, #A86070);
+  color: white; padding: 32px 32px 28px;
+  position: relative;
+}
+.headerTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 4vw, 32px); font-weight: 400;
+}
+.headerSub {
+  font-size: 13px; letter-spacing: 0.2em;
+  opacity: 0.8; margin-top: 6px;
+}
+.refreshBtn {
+  position: absolute; top: 32px; right: 32px;
+  background: rgba(255,255,255,0.2); color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50px; padding: 8px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px; cursor: pointer;
+  transition: background 0.2s;
+}
+.refreshBtn:hover { background: rgba(255,255,255,0.3); }
+
+/* ── STATS ── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px; padding: 28px 24px 8px;
+}
+.statCard {
+  background: white; border-radius: 16px;
+  padding: 20px 16px; text-align: center;
+  box-shadow: 0 4px 20px rgba(160,100,80,0.09);
+  border: 1px solid rgba(230,200,190,0.4);
+  cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+}
+.statCard:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(160,100,80,0.14); }
+.statGreen { border-color: rgba(100,180,120,0.35); background: rgba(240,255,245,0.8); }
+.statRed   { border-color: rgba(220,100,100,0.3);  background: rgba(255,245,245,0.8); }
+.statNum {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 42px); color: #C07880; line-height: 1;
+}
+.statGreen .statNum { color: #4A9A6A; }
+.statRed   .statNum { color: #C06060; }
+.statLabel { font-size: 12px; letter-spacing: 0.08em; color: #B89AA0; margin-top: 6px; }
+
+/* ── FILTER BAR ── */
+.filterBar {
+  margin: 12px 24px;
+  padding: 10px 18px;
+  background: rgba(192,120,128,0.1);
+  border-radius: 10px; font-size: 14px; color: #7A5C64;
+  display: flex; align-items: center; gap: 12px;
+}
+.clearFilter {
+  background: none; border: 1px solid rgba(192,120,128,0.4);
+  border-radius: 50px; padding: 4px 12px;
+  font-size: 12px; color: #C07880; cursor: pointer;
+}
+
+/* ── TABLE ── */
+.tableWrap {
+  margin: 16px 24px 0;
+  background: white; border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(160,100,80,0.08);
+  overflow: auto;
+  border: 1px solid rgba(230,200,190,0.4);
+}
+.table {
+  width: 100%; border-collapse: collapse;
+  font-size: 14px;
+}
+.table th {
+  background: #FDF5F0;
+  padding: 14px 16px; text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: #B89AA0;
+  border-bottom: 1px solid rgba(230,200,190,0.5);
+  white-space: nowrap;
+}
+.table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(230,200,190,0.25);
+  color: #5A3A3E; vertical-align: middle;
+}
+.rowYes:hover td, .rowNo:hover td { background: rgba(253,245,240,0.6); }
+.nameCell { font-weight: 600; color: #3A2A2E; }
+.dateCell { font-size: 12px; color: #B89AA0; white-space: nowrap; }
+
+.badgeYes {
+  background: rgba(100,180,120,0.15); color: #3A8A5A;
+  border: 1px solid rgba(100,180,120,0.3);
+  border-radius: 50px; padding: 4px 12px; font-size: 12px; white-space: nowrap;
+}
+.badgeNo {
+  background: rgba(220,100,100,0.1); color: #A05050;
+  border: 1px solid rgba(220,100,100,0.25);
+  border-radius: 50px; padding: 4px 12px; font-size: 12px; white-space: nowrap;
+}
+
+.loading { text-align: center; padding: 48px; color: #B89AA0; font-size: 16px; }
+.errorMsg { text-align: center; padding: 32px; color: #C06060; font-size: 14px; }
+.empty    { text-align: center; padding: 48px; color: #B89AA0; font-size: 16px; }
+
+@media (max-width: 480px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); padding: 20px 16px 8px; }
+  .tableWrap { margin: 16px 12px 0; }
+  .table th, .table td { padding: 10px 12px; }
+  .refreshBtn { position: static; margin-top: 12px; }
+}
