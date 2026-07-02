@@ -14,8 +14,8 @@ export default function Venue() {
           <div className={styles.venueName}>The Flora by Sunflower</div>
           <div className={styles.address}>Aranthode, Madhur<br/>Sunday, 2nd August 2026</div>
           <div className={styles.times}>
-            <span className={styles.timePill}>🕐 First Nikah — 01:30 PM</span>
-            <span className={styles.timePill}>🕓 Second Nikah — 04:30 PM</span>
+            <span className={styles.timePill}>🕐 Shahabas & Afhida — 01:30 PM</span>
+            <span className={styles.timePill}>🕓 Sharafath & Najifa — 04:30 PM</span>
           </div>
           <a className={styles.mapBtn} href="https://www.google.com/maps/search/The+Flora+by+Sunflower+Madhur" target="_blank" rel="noreferrer">📍 Open in Maps</a>
         </div>
